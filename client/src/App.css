@@ -1,7 +1,12 @@
 
 
-.nav-ul li{
+.nav-ul{
+  width: 100%;
   background-color: skyblue;
+
+}
+
+.nav-ul li{
   display: inline-block;
   padding: 10px;
 }
@@ -49,6 +54,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.signup{
+
+  text-align: center;
+  align-items: center;
+}
+
+.inputBox{
+  
+  display: block;
+  padding: 10px;
+  border: 1px solid;
+  width: 300px;
+  margin: 30px;
+
+}
+
+.appButton{
+ margin:20px;
+ width: 150px;
+ padding: 10px;
+ background-color: skyblue;
+ border: 1px solid;
+ cursor: pointer;
+  
 }
 
 .footer{

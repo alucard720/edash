@@ -2,7 +2,7 @@
 const SignUp =()=>{
 
     return(
-        <div>
+        <div className="signup">
         <h1>Register</h1>
         <input className="inputBox" type="text" placeholder="Username"/>
         <input className="inputBox" type="text" placeholder="Enter Email"/>
