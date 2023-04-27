@@ -1,4 +1,11 @@
+.signup{
+  text-align: center;
+}
 
+.signup input{
+  align-items: center;
+  text-align: center;
+}
 
 .nav-ul{
   width: 100%;
