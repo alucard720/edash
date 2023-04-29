@@ -1,11 +1,5 @@
-.signup{
-  text-align: center;
-}
 
-.signup input{
-  align-items: center;
-  text-align: center;
-}
+
 
 .nav-ul{
   width: 100%;
@@ -64,9 +58,8 @@
 }
 
 .signup{
-
-  text-align: center;
-  align-items: center;
+  margin-left: 30%;
+  
 }
 
 .inputBox{
@@ -80,7 +73,7 @@
 }
 
 .appButton{
- margin:20px;
+ margin:30px;
  width: 150px;
  padding: 10px;
  background-color: skyblue;
