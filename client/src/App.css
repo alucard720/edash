@@ -2,7 +2,8 @@
 
 
 .nav-ul{
-  width: 100%;
+  margin-top: auto;
+  width: 97%;
   background-color: skyblue;
 
 }
@@ -16,48 +17,19 @@
 
   color: #fff;
   text-decoration: none;
-  padding: 5px;
+  padding: 10px;
+}
+
+.nav-right{
+  text-align: right;
 }
 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login {
+margin-left: 30%;
 }
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.signup{
+.signup, .product{
   margin-left: 30%;
   
 }
@@ -89,4 +61,46 @@
   background-color: skyblue;
   width: 100%;
   text-align: center;
+}
+
+.dropdown-container {
+  text-align: left;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+}
+
+.dropdown-input {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+
+.dropdown-menu{
+  position:absolute;
+  transform: translateY(4px);
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 150px;
+
+}
+.dropdown-item{
+  padding:5px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: bisque;
+}
+
+.invalid-input{
+  display: block;
+  color: red;
+  margin-top: -30px;
+  margin-left: 30px;
 }

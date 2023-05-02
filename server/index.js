@@ -36,6 +36,17 @@ app.post("/add-product",async (req, res)=>{
 
 })
 
+app.get('/product-list',async(req, res)=>{
+    const products =  await Product.find()
+    if(products.length > 0){
+        res.send(products)
+    }else{
+        res.send({result:"no product found"})
+    }
+});
+
+
+
 
 //server Ports
 const port = process.env.PORT
