@@ -45,6 +45,13 @@ app.get('/product-list',async(req, res)=>{
     }
 });
 
+app.delete('/product/:id', async(req, res)=>{
+    let result =  await Product.deleteOne({_id:req.params.id})
+    res.send(result)
+    // const {id} = req.params.id
+    // const erase = await Product.deleteOne(id)
+
+})
 
 
 
