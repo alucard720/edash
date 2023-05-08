@@ -12,7 +12,11 @@ useEffect(()=>{
 },[])
 
 const getProducts = async ()=>{
-    let result = await fetch('http://localhost:3500/product-list')
+    let result = await fetch('http://localhost:3500/product-list',{
+      headers:{
+        authorization:JSON.parse(localStorage.getItem('token'))
+      }
+    })
     result = await result.json();
     setProducts(result);
 }

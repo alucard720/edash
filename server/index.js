@@ -14,7 +14,7 @@ app.use(cors());
 app.post("/register", async (req, res) => {
   let user = new User(req.body);
   let result = await user.save();
-  result = toObject();
+  result = result.toObject();
   delete result.password
   jwt.sign({result}, jwkey,{expiresIn: "2h"},(err,token)=>{
     if(err){
@@ -103,6 +103,12 @@ app.get("/search/:key", async (req, res) => {
   res.send(result);
 });
 
+
+
+
+function verifyToken(req, res, next){
+  console.warn(req.header['autorizationl'])
+}
 //server Ports
 const port = process.env.PORT;
 
