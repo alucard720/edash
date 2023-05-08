@@ -17,15 +17,17 @@ const Login = () => {
     const handlelogin = async ()=>{
         let result= await fetch("http://localhost:3500/login",{
             method:'post',
-            body:JSON.stringify({email, password}),
+            body:JSON.stringify({ email, password}),
             headers:{
                'Content-Type':'application/json'
             }
         });
         result= await result.json();
         console.log(result);
-        if(result.name){
-            localStorage.setItem('user', JSON.stringify(result))
+
+        if(result.auth){
+            localStorage.setItem('user', JSON.stringify(result.user));
+            localStorage.setItem('token', JSON.stringify(result.auth));
             navigate('/')
 
         }else{

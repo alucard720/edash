@@ -12,17 +12,12 @@ const SignUp =()=>{
 
         if(auth){
             navigate('/')
-
         }
-
-        
     },[])
-
 
 
     const collectData= async ()=>{
         console.warn(name,email,password);
-
         let result =  await fetch("http://localhost:3500/register",{
             method:'post',
             body:JSON.stringify({name,email,password}),
@@ -31,8 +26,9 @@ const SignUp =()=>{
             }
         });
         result =  await result.json();
-        console.log(result);
-        localStorage.setItem("user",JSON.stringify(result))
+        console.warn(result);
+        localStorage.setItem("user", JSON.stringify(result.result))
+        localStorage.setItem("token", JSON.stringify(result.auth))
         navigate('/')
     }
     
