@@ -76,6 +76,31 @@ app.put('/product/:id',async (req, res)=>{
 })
 
 
+app.get("/search/:key",async (req, res)=>{
+
+    let result = await Product.find({
+
+        "$or":[ 
+        {
+            name:{$regex:req.params.key}
+            
+        },
+        {
+            price:{$regex:req.params.key}
+        },
+        {
+            category:{$regex:req.params.key}
+        },
+        {
+            company:{$regex:req.params.key}
+        }
+    ]
+    });
+    res.send(result);
+  
+})
+
+
 
 //server Ports
 const port = process.env.PORT
