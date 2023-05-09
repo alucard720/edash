@@ -43,7 +43,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/add-product", async (req, res) => {
+app.post("/add-product", verifyToken, async (req, res) => {
   let product = new Product(req.body);
   let result = await product.save();
   res.status(200).json(result);
@@ -108,7 +108,20 @@ app.get("/search/:key",verifyToken, async (req, res) => {
 
 function verifyToken(req, res, next){
   console.warn(req.headers['authorization']);
-  next();
+  let token = req.headers['authorization'];
+  if(token){
+    token = token.split(' ')[1];
+    jwt.verify(token, jwkey, (err, valid)=>{
+      if(err){
+        res.status(401).send({result: 'Please provide a valid token'})
+      }else{
+        next();
+      }
+    })
+  }else{
+    res.status(403).send({result:'Please provide a token'})
+  }
+  
 }
 
 
