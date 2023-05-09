@@ -107,7 +107,8 @@ app.get("/search/:key",verifyToken, async (req, res) => {
 
 
 function verifyToken(req, res, next){
-  console.warn(req.headers['authorization'])
+  console.warn(req.headers['authorization']);
+  next();
 }
 
 
