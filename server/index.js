@@ -83,7 +83,7 @@ app.put("/product/:id", async (req, res) => {
   res.send(result);
 });
 
-app.get("/search/:key", async (req, res) => {
+app.get("/search/:key",verifyToken, async (req, res) => {
   let result = await Product.find({
     $or: [
       {
@@ -107,8 +107,10 @@ app.get("/search/:key", async (req, res) => {
 
 
 function verifyToken(req, res, next){
-  console.warn(req.header['autorizationl'])
+  console.warn(req.headers['authorization'])
 }
+
+
 //server Ports
 const port = process.env.PORT;
 
